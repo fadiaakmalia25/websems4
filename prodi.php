@@ -1,20 +1,8 @@
 <?php
-$servername = "localhost";
-$database = "latihan_fadia";
-$username = "root";
-$password = "";
+include "koneksi.php";
 
-$conn = mysqli_connect($servername, $username, $password, $database);
-//mysqli_connect("server", "username", "password", "database")
-
-$query ="SELECT * FROM prodi";
-$hasil =mysqli_query($conn, $query);
-
-$data = [];
-while ($baris = mysqli_fetch_assoc($hasil)) {
-    $data[] = $baris;
-}
-
+$query= "Select * from prodi";
+$data= ambildata($query);
 ?>
 
 <!DOCTYPE html>
@@ -24,8 +12,6 @@ while ($baris = mysqli_fetch_assoc($hasil)) {
     <meta name="viewport" content="width=<, initial-scale=1.0">
     <title>SIMPADUPOLIBAN</title>
 </head>
-
-
 <body>
     <h1>DATA PRODI</h1>
     <br>

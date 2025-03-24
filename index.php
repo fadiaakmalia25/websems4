@@ -1,20 +1,8 @@
 <?php
-$servername = "localhost";
-$database = "latihan_fadia";
-$username = "root";
-$password = "";
+include "koneksi.php";
 
-$conn = mysqli_connect($servername, $username, $password, $database);
-//mysqli_connect("server", "username", "password", "database")
-
-$query ="SELECT * FROM mahasiswa";
-$hasil =mysqli_query($conn, $query);
-
-$data = [];
-while ($baris = mysqli_fetch_assoc($hasil)) {
-    $data[] = $baris;
-}
-
+$query= "Select * from mahasiswa";
+$data= ambildata($query);
 ?>
 
 <!DOCTYPE html>
@@ -29,11 +17,13 @@ while ($baris = mysqli_fetch_assoc($hasil)) {
 <body>
     <h1>DATA MAHASISWA</h1>
     <br>
+    <a href="tambahmahasiswa.php">Tambah</a>
     <table border="1" cellspacing="0" cellpadding="5" >
         <head>
             <th>No</th>
             <th>NIM</th>
             <th>Nama</th>
+            <th>Telp</th>
         </thead>
         <tbody>
 
