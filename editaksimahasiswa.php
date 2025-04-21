@@ -8,13 +8,10 @@ $telp = $_POST["telp"];
 $email = $_POST["email"];
 $id_prodi = $_POST["id_prodi"];
 
-
-$query = "INSERT INTO mahasiswa (nim, nama, tanggallahir, telp, email, id) VALUES 
-('$nim', '$nama' , '$tanggallahir', '$telp', '$email', '$id_prodi')";
-
-
+$query = "UPDATE mahasiswa SET nama = '$nama', tanggallahir = '$tanggallahir', telp = '$telp', email = '$email', id = '$id_prodi' WHERE nim = '$nim'";
+// var_dump($query);
+// die;
 mysqli_query($conn, $query);
 
-header("location:index.php");
-
+header("location: index.php");
 ?>

@@ -41,10 +41,9 @@ $data= ambildata($query);
                 <td>
                     <select name="id_prodi">
                         <?php foreach ($data as $d): ?>
-                             <option value=<?php echo $d['id'] ?>"><?php echo $d['nama'] ?></option>
+                             <option value="<?php echo $d['id'] ?>"><?php echo $d['nama'] ?></option>
                         <?php endforeach ?>
-                    <option value="2">Administrasi Bisnis</option>
-                </select>
+                                    </select>
             </td>
             </tr>
         </table>
