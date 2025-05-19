@@ -18,5 +18,13 @@ function ambildata ($query)
     }
     return $data;
 }
+
+function ceklogin()
+{
+    if (!isset($_SESSION['login'])) {
+        header("Location: login.html");
+    }
+}   
+
 ?>
 
